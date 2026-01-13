@@ -1,0 +1,8 @@
+{
+  "codes": [
+    { "code": "S123", "type": "1_month", "days": 30, "limit": 30 },
+    { "code": "SUB-120-X3", "type": "3_months", "days": 90, "limit": 120 },
+    { "code": "SUB-220-X6", "type": "6_months", "days": 180, "limit": 220 },
+    { "code": "SUB-350-Y1", "type": "1_year", "days": 365, "limit": 350 }
+  ]
+}
