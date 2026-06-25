@@ -1,0 +1,16 @@
+name: Wake Supabase
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Database
+        run: |
+          curl \
+          "https://uemntbuhsjwnognsmlaq.supabase.co/rest/v1/subscriptions?select=id&limit=1" \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}"
