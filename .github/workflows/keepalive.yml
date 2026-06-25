@@ -1,19 +1,15 @@
-name: Keep Supabase Awake
 
-on:
   schedule:
     - cron: '0 */6 * * *'
-
-  workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Wake Supabase
+      - name: Ping Database
         run: |
           curl \
-          -X GET \
-          -H "x-secret: ${{ secrets.KEEPALIVE_SECRET }}" \
-          https://uemntbuhsjwnognsmlaq.supabase.co/functions/v1/keepalive
+          "https://uemntbuhsjwnognsmlaq.supabase.co/rest/v1/subscriptions?select=id&limit=1" \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}"palive
+
