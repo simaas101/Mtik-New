@@ -1,4 +1,6 @@
+name: Wake Supabase
 
+on:
   schedule:
     - cron: '0 */6 * * *'
 
@@ -11,5 +13,4 @@ jobs:
         run: |
           curl \
           "https://uemntbuhsjwnognsmlaq.supabase.co/rest/v1/subscriptions?select=id&limit=1" \
-          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}"palive
-
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}"
